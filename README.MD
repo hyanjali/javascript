@@ -1768,6 +1768,131 @@ function checkEvenOdd(num) {
     if(num % 2 === 0) {
         return "Even";
     } else {
+        # 📅 Day 12 — Even & Odd Numbers Using Functions
+
+Today, I practiced using **JavaScript functions with conditions** by creating a program to check whether a number is **Even or Odd**. 🚀
+
+## 📚 What I Learned
+
+Today I learned:
+
+* How to create a function
+* How to pass a number as a parameter
+* How to call a function
+* Using the `%` (modulus) operator
+* Using `if...else` inside a function
+* Using `return` inside a function
+* Using the ternary operator
+* Understanding the difference between a parameter and an argument
+
+## 💻 Example 1 — Using if...else
+
+```javascript
+function checkEvenOdd(number) {
+    if (number % 2 === 0) {
+        console.log("Even");
+    } else {
+        console.log("Odd");
+    }
+}
+
+checkEvenOdd(10);
+checkEvenOdd(7);
+```
+
+### Output
+
+```text
+Even
+Odd
+```
+
+## 💻 Example 2 — Using return
+
+```javascript
+function checkEvenOdd(number) {
+    if (number % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+
+console.log(checkEvenOdd(8));
+console.log(checkEvenOdd(15));
+```
+
+### Output
+
+```text
+Even
+Odd
+```
+
+## 💻 Example 3 — Using Ternary Operator
+
+```javascript
+function checkEvenOdd(number) {
+    return number % 2 === 0 ? "Even" : "Odd";
+}
+
+console.log(checkEvenOdd(12));
+```
+
+### Output
+
+```text
+Even
+```
+
+## 🧠 Important Concept
+
+The `%` operator gives the **remainder** after division.
+
+```text
+10 % 2 = 0  → Even
+7 % 2 = 1   → Odd
+20 % 2 = 0  → Even
+15 % 2 = 1  → Odd
+```
+
+So the basic logic is:
+
+```javascript
+number % 2 === 0
+```
+
+If this condition is `true`, the number is **Even**. Otherwise, it is **Odd**.
+
+## 🔑 Function Concepts
+
+```javascript
+function checkEvenOdd(number)
+```
+
+* `checkEvenOdd` → Function name
+* `number` → Parameter
+* `checkEvenOdd(10)` → Function call
+* `10` → Argument
+
+## 📝 Practice Problems
+
+I practiced these problems:
+
+1. Check whether a number is even or odd.
+2. Check multiple numbers using the same function.
+3. Return `"Even"` or `"Odd"` from a function.
+4. Find even and odd numbers from an array.
+5. Count the number of even and odd elements in an array.
+
+## 🚀 Day 12 Summary
+
+Today I strengthened my understanding of **functions + conditions + operators** in JavaScript.
+
+I learned that functions help me **reuse the same logic with different inputs**, which is an important concept for writing clean and efficient code.
+
+**Next Goal:** Practice functions with **arrays and loops**. 💻🔥
+
 ```
 
 
