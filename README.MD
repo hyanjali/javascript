@@ -1894,6 +1894,261 @@ I learned that functions help me **reuse the same logic with different inputs**,
 **Next Goal:** Practice functions with **arrays and loops**. 💻🔥
 
 ```
+# 📅 Day 13 — While Loops, Break & Continue
+
+Today, I combined my learning of **while loops** with **break and continue statements** in JavaScript. 🚀
+
+I learned how to repeat code using `while` and `do...while`, and how to control the execution of loops using `break` and `continue`.
+
+## 📚 What I Learned
+
+Today I practiced:
+
+* `while` loop
+* `do...while` loop
+* Loop conditions
+* Updating loop variables
+* `break` statement
+* `continue` statement
+* Even and odd numbers using loops
+* Number-based problems using `while`
+* Avoiding infinite loops
+
+---
+
+## 1️⃣ While Loop
+
+A `while` loop executes a block of code as long as the condition is `true`.
+
+```javascript
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+5
+```
+
+---
+
+## 2️⃣ Printing Even Numbers
+
+```javascript
+let i = 1;
+
+while (i <= 20) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+
+    i++;
+}
+```
+
+### Output
+
+```text
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+```
+
+---
+
+## 3️⃣ Do...While Loop
+
+A `do...while` loop executes the code **at least once** before checking the condition.
+
+```javascript
+let i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+5
+```
+
+---
+
+## 4️⃣ Break Statement
+
+`break` is used to **completely stop the loop**.
+
+```javascript
+let i = 1;
+
+while (i <= 10) {
+    if (i === 5) {
+        break;
+    }
+
+    console.log(i);
+    i++;
+}
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+```
+
+When `i` becomes `5`, `break` stops the loop.
+
+---
+
+## 5️⃣ Continue Statement
+
+`continue` is used to **skip the current iteration** and continue with the next one.
+
+```javascript
+let i = 0;
+
+while (i < 10) {
+    i++;
+
+    if (i === 5) {
+        continue;
+    }
+
+    console.log(i);
+}
+```
+
+### Output
+
+```text
+1
+2
+3
+4
+6
+7
+8
+9
+10
+```
+
+Here, `5` is skipped.
+
+---
+
+## 🧠 Break vs Continue
+
+| Statement  | Meaning                    |
+| ---------- | -------------------------- |
+| `break`    | Stop the entire loop       |
+| `continue` | Skip the current iteration |
+
+### Easy way to remember:
+
+**`break` → 🛑 Stop**
+
+**`continue` → ⏭️ Skip**
+
+---
+
+## 💻 Number-Based Practice
+
+I practiced solving problems using `while` loops:
+
+1. Print numbers from 1 to 10.
+2. Print numbers from 10 to 1.
+3. Print even numbers from 1 to 20.
+4. Print odd numbers from 1 to 20.
+5. Find the sum of numbers from 1 to 100.
+6. Print the multiplication table of a number.
+7. Count the digits of a number.
+8. Find the sum of digits.
+9. Reverse a number.
+10. Check whether a number is a palindrome.
+11. Find the factorial of a number.
+12. Find the largest digit.
+13. Find the smallest digit.
+14. Count even and odd digits.
+15. Check whether a number is prime.
+
+---
+
+## ⚠️ Important: Avoid Infinite Loops
+
+Always remember to update the loop variable.
+
+❌ Incorrect:
+
+```javascript
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+}
+```
+
+The value of `i` never changes, so the loop continues forever.
+
+✅ Correct:
+
+```javascript
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+```
+
+---
+
+## 🔑 Key Takeaways
+
+Today I learned that:
+
+* `while` repeats code while a condition is true.
+* `do...while` executes at least once.
+* `break` completely stops a loop.
+* `continue` skips one iteration.
+* Loop variables must be updated to avoid infinite loops.
+* `%` can be used with loops to find even and odd numbers.
+* `while` loops are useful for number-based programming problems.
+
+## 🚀 Day 13 Summary
+
+Today I strengthened my understanding of **loops and loop control** in JavaScript.
+
+I practiced using `while`, `do...while`, `break`, and `continue` and solved several number-based coding problems.
+
+**Next Goal:** Learn **Nested Loops and Patterns**. 💻🔥
+
 
 
 
