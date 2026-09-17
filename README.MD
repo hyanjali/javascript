@@ -2148,7 +2148,152 @@ Today I strengthened my understanding of **loops and loop control** in JavaScrip
 I practiced using `while`, `do...while`, `break`, and `continue` and solved several number-based coding problems.
 
 **Next Goal:** Learn **Nested Loops and Patterns**. 💻🔥
+Day 14 — Nested Loops & Patterns 🔁
+🎯 What I Learned
 
+Today I learned about nested loops in JavaScript and how they can be used to create different patterns using loops.
+
+1. What is a Nested Loop?
+
+A nested loop means putting one loop inside another loop.
+
+for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+        console.log(i, j);
+    }
+}
+
+Here:
+
+Outer loop → controls the rows
+Inner loop → controls the columns
+For every 1 iteration of the outer loop, the inner loop runs completely.
+2. Basic Pattern
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= 5; j++) {
+        row += "* ";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+3. Increasing Star Pattern
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "* ";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+*
+* *
+* * *
+* * * *
+* * * * *
+4. Number Pattern
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += j + " ";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+5. Same Number Pattern
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += i + " ";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+🧠 Important Logic
+
+Remember this simple rule:
+
+Outer loop = Rows
+Inner loop = Columns
+
+For example:
+
+for (let i = 1; i <= 5; i++) {       // rows
+
+    for (let j = 1; j <= i; j++) {   // columns
+        // pattern
+    }
+
+}
+
+The outer loop decides how many lines you get, while the inner loop decides what gets printed on each line.
+
+📝 Day 14 Practice Questions
+Print a 5 × 5 star pattern.
+Print an increasing star triangle.
+Print a decreasing star triangle.
+Print numbers from 1 to 5 in triangle form.
+Print the same number repeatedly in each row.
+Print a multiplication-table pattern using nested loops.
+Print this pattern:
+1
+12
+123
+1234
+12345
+Print:
+*****
+****
+***
+**
+*
+Print a square using numbers:
+1 2 3
+1 2 3
+1 2 3
+Create a pyramid pattern using nested loops.
+🚀 Day 14 Summary
+
+Topics covered:
+
+Nested loops
+Outer loop and inner loop
+Row and column logic
+Star patterns
+Number patterns
+Building patterns using for loops
+Understanding nested-loop execution
 
 
 
