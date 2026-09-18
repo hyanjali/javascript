@@ -2294,6 +2294,161 @@ Star patterns
 Number patterns
 Building patterns using for loops
 Understanding nested-loop execution
+Day 14 — Nested Loops & Patterns in JavaScript ⭐
+
+Today I learned about Nested Loops and how to use them to create different patterns using JavaScript.
+
+🔹 What is a Nested Loop?
+
+A nested loop means putting one loop inside another loop.
+
+for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+        console.log("*");
+    }
+}
+
+Here:
+
+The outer loop controls the rows.
+The inner loop controls the columns/items inside each row.
+🔹 Pattern 1: Increasing Star Pattern
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+*
+**
+***
+****
+*****
+🔹 Pattern 2: Decreasing Star Pattern
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+*****
+****
+***
+**
+*
+🔹 Pattern 3: Increasing + Decreasing
+
+This is the pattern I practiced today:
+
+let n = 5;
+
+for (let i = 1; i <= n; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+
+    console.log(row);
+}
+
+for (let i = n - 1; i >= 1; i--) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+
+    console.log(row);
+}
+
+Output:
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+🔹 Important Concept
+
+The variable row is used to build the pattern one row at a time.
+
+row += "*";
+
+means:
+
+row = row + "*";
+
+For example:
+
+row = ""
+row = "*"
+row = "**"
+row = "***"
+
+Then:
+
+console.log(row);
+
+prints the complete row.
+
+🔹 What I Learned Today
+What nested loops are
+How an outer loop controls rows
+How an inner loop controls columns
+How to use row += "*" to create patterns
+Increasing star patterns
+Decreasing star patterns
+Combining two loops to create complex patterns
+How loop conditions control the shape of a pattern
+💻 Day 14 Practice Problems
+Print a square of *
+Print an increasing triangle
+Print a decreasing triangle
+Print the pattern:
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+Print:
+1
+12
+123
+1234
+12345
+Print:
+1
+22
+333
+4444
+55555
+Print a reverse number pattern.
+Print a multiplication table using nested loops.
+Print a rectangle using *.
+Create a pyramid pattern using nested loops.
+
+Day 14 takeaway: Nested loops are very important for understanding patterns, matrices, tables, and 2D arrays in JavaScript.
 
 
 
