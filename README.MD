@@ -2449,6 +2449,381 @@ Print a rectangle using *.
 Create a pyramid pattern using nested loops.
 
 Day 14 takeaway: Nested loops are very important for understanding patterns, matrices, tables, and 2D arrays in JavaScript.
+# 📘 JavaScript Day 15 — Arrays & Array Methods
+
+## 🎯 Today's Goal
+
+Learn how to work with arrays and use common JavaScript array methods.
+
+---
+
+## 1. What is an Array?
+
+An **array** is used to store multiple values in a single variable.
+
+```javascript
+let numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers);
+```
+
+**Output:**
+
+```text
+[10, 20, 30, 40, 50]
+```
+
+---
+
+## 2. Access Array Elements
+
+Array indexing starts from **0**.
+
+```javascript
+let fruits = ["Apple", "Mango", "Banana"];
+
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+```
+
+**Output:**
+
+```text
+Apple
+Mango
+Banana
+```
+
+---
+
+## 3. Change an Array Element
+
+```javascript
+let fruits = ["Apple", "Mango", "Banana"];
+
+fruits[1] = "Orange";
+
+console.log(fruits);
+```
+
+**Output:**
+
+```text
+["Apple", "Orange", "Banana"]
+```
+
+---
+
+## 4. Array Length
+
+`.length` tells us how many elements are in an array.
+
+```javascript
+let numbers = [10, 20, 30, 40];
+
+console.log(numbers.length);
+```
+
+**Output:**
+
+```text
+4
+```
+
+---
+
+# 🔹 Important Array Methods
+
+## 5. push()
+
+Adds an element to the **end** of an array.
+
+```javascript
+let numbers = [10, 20, 30];
+
+numbers.push(40);
+
+console.log(numbers);
+```
+
+**Output:**
+
+```text
+[10, 20, 30, 40]
+```
+
+---
+
+## 6. pop()
+
+Removes the **last** element.
+
+```javascript
+let numbers = [10, 20, 30];
+
+numbers.pop();
+
+console.log(numbers);
+```
+
+**Output:**
+
+```text
+[10, 20]
+```
+
+---
+
+## 7. unshift()
+
+Adds an element to the **beginning**.
+
+```javascript
+let numbers = [20, 30, 40];
+
+numbers.unshift(10);
+
+console.log(numbers);
+```
+
+**Output:**
+
+```text
+[10, 20, 30, 40]
+```
+
+---
+
+## 8. shift()
+
+Removes the **first** element.
+
+```javascript
+let numbers = [10, 20, 30];
+
+numbers.shift();
+
+console.log(numbers);
+```
+
+**Output:**
+
+```text
+[20, 30]
+```
+
+---
+
+# 🔹 Loop Through an Array
+
+## 9. Using for Loop
+
+```javascript
+let numbers = [10, 20, 30, 40, 50];
+
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+}
+```
+
+**Output:**
+
+```text
+10
+20
+30
+40
+50
+```
+
+---
+
+## 10. Using Function + Loop
+
+```javascript
+function printArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
+
+printArray([10, 20, 30, 40, 50]);
+```
+
+### Logic
+
+1. Function receives an array.
+2. `i = 0` starts from the first element.
+3. `i < arr.length` checks the array size.
+4. `arr[i]` accesses each element.
+5. `i++` moves to the next element.
+
+---
+
+# 🧠 Day 15 Practice Questions
+
+### Basic
+
+1. Create an array of 5 numbers.
+2. Print the first element.
+3. Print the last element.
+4. Find the length of an array.
+5. Change the second element.
+6. Add an element using `push()`.
+7. Remove the last element using `pop()`.
+8. Add an element using `unshift()`.
+9. Remove the first element using `shift()`.
+10. Print every element using a `for` loop.
+
+### Logic Building
+
+11. Find the largest number in an array.
+
+```javascript
+function findLargest(arr) {
+    let largest = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+
+    return largest;
+}
+
+console.log(findLargest([10, 25, 5, 100, 30]));
+```
+
+**Output:**
+
+```text
+100
+```
+
+---
+
+12. Find the smallest number.
+
+```javascript
+function findSmallest(arr) {
+    let smallest = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+
+    return smallest;
+}
+
+console.log(findSmallest([10, 25, 5, 100, 30]));
+```
+
+**Output:**
+
+```text
+5
+```
+
+---
+
+13. Find the sum of all numbers.
+
+```javascript
+function findSum(arr) {
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+console.log(findSum([10, 20, 30, 40]));
+```
+
+**Output:**
+
+```text
+100
+```
+
+---
+
+14. Count even numbers.
+
+```javascript
+function countEven(arr) {
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+console.log(countEven([1, 2, 4, 7, 8, 10]));
+```
+
+**Output:**
+
+```text
+4
+```
+
+---
+
+15. Print only odd numbers.
+
+```javascript
+function printOdd(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            console.log(arr[i]);
+        }
+    }
+}
+
+printOdd([1, 2, 3, 4, 5, 6, 7]);
+```
+
+**Output:**
+
+```text
+1
+3
+5
+7
+```
+
+---
+
+# 📌 Day 15 Quick Revision
+
+| Concept      | Meaning                |
+| ------------ | ---------------------- |
+| Array        | Stores multiple values |
+| Index        | Position of an element |
+| `arr[0]`     | First element          |
+| `arr.length` | Number of elements     |
+| `push()`     | Add at end             |
+| `pop()`      | Remove from end        |
+| `unshift()`  | Add at beginning       |
+| `shift()`    | Remove from beginning  |
+| `for` loop   | Traverse array         |
+| `arr[i]`     | Access current element |
+
+## 🔥 Day 15 Main Focus
+
+**Array → Index → Length → push → pop → shift → unshift → Loop → Functions + Arrays → Logic Problems**
+
 
 
 
