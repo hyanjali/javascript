@@ -2823,6 +2823,342 @@ printOdd([1, 2, 3, 4, 5, 6, 7]);
 ## 🔥 Day 15 Main Focus
 
 **Array → Index → Length → push → pop → shift → unshift → Loop → Functions + Arrays → Logic Problems**
+1. map() — Transform every element
+
+map() creates a new array by changing each element.
+
+Example
+let numbers = [1, 2, 3, 4, 5];
+
+let result = numbers.map(function(num) {
+    return num * 2;
+});
+
+console.log(result);
+Output
+[2, 4, 6, 8, 10]
+Simple logic
+1 → 1 × 2 → 2
+2 → 2 × 2 → 4
+3 → 3 × 2 → 6
+...
+Arrow function
+let numbers = [1, 2, 3, 4, 5];
+
+let result = numbers.map(num => num * 2);
+
+console.log(result);
+
+Remember: map() = change/transform every element
+
+2. filter() — Select elements
+
+filter() creates a new array containing only elements that satisfy a condition.
+
+Example
+let numbers = [1, 2, 3, 4, 5, 6];
+
+let result = numbers.filter(function(num) {
+    return num % 2 === 0;
+});
+
+console.log(result);
+Output
+[2, 4, 6]
+Arrow function
+let numbers = [1, 2, 3, 4, 5, 6];
+
+let result = numbers.filter(num => num % 2 === 0);
+
+console.log(result);
+
+Remember: filter() = select
+
+3. reduce() — Get one final value
+
+reduce() processes all elements and produces one final result.
+
+Example: Sum
+let numbers = [10, 20, 30, 40];
+
+let total = numbers.reduce(function(sum, num) {
+    return sum + num;
+}, 0);
+
+console.log(total);
+Output
+100
+How it works
+0 + 10 = 10
+10 + 20 = 30
+30 + 30 = 60
+60 + 40 = 100
+
+Arrow function:
+
+let numbers = [10, 20, 30, 40];
+
+let total = numbers.reduce((sum, num) => sum + num, 0);
+
+console.log(total);
+
+Remember: reduce() = combine into one value
+
+4. slice() — Copy/remove a portion
+
+slice() returns a portion of an array without changing the original array.
+
+let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+let result = fruits.slice(1, 4);
+
+console.log(result);
+console.log(fruits);
+Output
+["Banana", "Mango", "Orange"]
+
+["Apple", "Banana", "Mango", "Orange", "Grapes"]
+
+Important:
+
+slice(start, end)
+
+The end index is not included.
+
+For:
+
+["Apple", "Banana", "Mango", "Orange", "Grapes"]
+    0        1        2        3        4
+fruits.slice(1, 4)
+
+takes indexes:
+
+1, 2, 3
+5. splice() — Add/remove elements
+
+splice() changes the original array.
+
+Remove
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+fruits.splice(1, 2);
+
+console.log(fruits);
+Output
+["Apple", "Orange"]
+
+Here:
+
+splice(1, 2)
+
+means:
+
+1 → starting index
+2 → number of elements to remove
+Add using splice()
+let fruits = ["Apple", "Banana", "Orange"];
+
+fruits.splice(2, 0, "Mango");
+
+console.log(fruits);
+Output
+["Apple", "Banana", "Mango", "Orange"]
+
+Why?
+
+splice(2, 0, "Mango")
+
+means:
+
+start at index 2
+remove 0 elements
+add "Mango"
+slice() vs splice() ⭐
+
+This is very important for interviews.
+
+Method	Purpose	Changes original?
+map()	Transform elements	❌ No
+filter()	Select elements	❌ No
+reduce()	Create one final value	❌ No
+slice()	Get/copy portion	❌ No
+splice()	Add/remove elements	✅ Yes
+Easy memory trick
+MAP     → CHANGE
+FILTER  → SELECT
+REDUCE  → COMBINE
+SLICE   → COPY
+SPLICE  → CUT/ADD
+🔥 One example using all 5
+let numbers = [1, 2, 3, 4, 5, 6];
+
+// map
+let doubled = numbers.map(num => num * 2);
+console.log(doubled);
+
+// filter
+let even = numbers.filter(num => num % 2 === 0);
+console.log(even);
+
+// reduce
+let sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum);
+
+// slice
+let part = numbers.slice(1, 4);
+console.log(part);
+
+// splice
+numbers.splice(2, 1);
+console.log(numbers);
+
+Outputs:
+
+[2, 4, 6, 8, 10, 12]
+
+[2, 4, 6]
+
+21
+
+[2, 3, 4]
+
+[1, 2, 4, 5, 6]
+
+For your JavaScript learning, next practice these with 15–20 coding questions: map, filter, reduce, slice, and splice, starting from beginner level and gradually moving to interview questions.
+
+for each
+JavaScript forEach() ⭐
+
+forEach() is used when you want to run some code for every element of an array.
+
+Basic syntax
+array.forEach(function(element) {
+    // code
+});
+1. Print every element
+let numbers = [10, 20, 30, 40, 50];
+
+numbers.forEach(function(num) {
+    console.log(num);
+});
+
+Output:
+
+10
+20
+30
+40
+50
+How it works
+10 → function runs
+20 → function runs
+30 → function runs
+40 → function runs
+50 → function runs
+2. Using arrow function
+
+The shorter version is:
+
+let numbers = [10, 20, 30, 40, 50];
+
+numbers.forEach(num => {
+    console.log(num);
+});
+3. Add 10 to every number
+let numbers = [10, 20, 30];
+
+numbers.forEach(num => {
+    console.log(num + 10);
+});
+
+Output:
+
+20
+30
+40
+
+⚠️ Notice: forEach() itself does not create a new array.
+
+If you want a new array, use map():
+
+let result = numbers.map(num => num + 10);
+
+console.log(result);
+
+Output:
+
+[20, 30, 40]
+4. forEach() with index
+
+You can get both the value and index:
+
+let fruits = ["Apple", "Mango", "Orange"];
+
+fruits.forEach(function(fruit, index) {
+    console.log(index, fruit);
+});
+
+Output:
+
+0 "Apple"
+1 "Mango"
+2 "Orange"
+
+The order is:
+
+forEach((element, index) => {
+    
+});
+
+You can also get the whole array:
+
+forEach((element, index, array) => {
+    
+});
+for loop vs forEach()
+Traditional for loop
+let numbers = [10, 20, 30];
+
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+}
+forEach()
+let numbers = [10, 20, 30];
+
+numbers.forEach(num => {
+    console.log(num);
+});
+
+forEach() is often cleaner when you simply want to perform an action for every array element.
+
+forEach() vs map() ⭐
+
+This is important:
+
+Method	Main purpose	Returns new array?
+forEach()	Perform an action	❌ No
+map()	Transform elements	✅ Yes
+filter()	Select elements	✅ Yes
+reduce()	Combine elements	❌ Usually one value
+slice()	Get a portion	✅ Yes
+splice()	Add/remove elements	❌ Changes original
+Easy memory trick
+forEach → DO something
+map     → CHANGE every element
+filter  → SELECT elements
+reduce  → COMBINE elements
+slice   → COPY a portion
+splice  → ADD/REMOVE
+Example to remember
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(num => {
+    console.log(num * 2);
+});
+
+Here, forEach() is simply saying:
+
+"Take every number and do this operation."
 
 
 
