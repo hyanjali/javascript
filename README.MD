@@ -3159,6 +3159,53 @@ numbers.forEach(num => {
 Here, forEach() is simply saying:
 
 "Take every number and do this operation."
+. Create a function that prints:
+
+Hello JavaScript
+
+2. Create a function that accepts a name and prints:
+
+Hello Anjali
+
+3. Create a function to add two numbers.
+
+4. Create a function to subtract two numbers.
+
+5. Create a function to multiply two numbers.
+
+6. Create a function to divide two numbers.
+
+7. Create a function to find the square of a number.
+
+8. Create a function to check whether a number is positive or negative.
+
+Intermediate
+
+9. Create a function to check even/odd.
+
+10. Create a function to find the largest of two numbers.
+
+11. Create a function to find the smallest of two numbers.
+
+12. Create a function to print numbers from 1 to n.
+
+13. Create a function to calculate the sum from 1 to n.
+
+14. Create a function to calculate factorial.
+
+15. Create a function to reverse a string.
+
+⭐ Array Practice
+
+16. Create a function to print every element of an array.
+
+17. Create a function to find the largest number in an array.
+
+18. Create a function to find the smallest number in an array.
+
+19. Create a function to calculate the sum of all array elements.
+
+20. Create a function to count even numbers in an array.
 
 
 
