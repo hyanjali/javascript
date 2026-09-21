@@ -3206,6 +3206,274 @@ Intermediate
 19. Create a function to calculate the sum of all array elements.
 
 20. Create a function to count even numbers in an array.
+JavaScript Day 18 — Objects
+1. What is an Object?
+
+An object stores data in key-value pairs.
+
+let student = {
+    name: "Anjali",
+    age: 22,
+    course: "B.Com"
+};
+
+console.log(student);
+
+Output:
+
+{name: "Anjali", age: 22, course: "B.Com"}
+2. Access Object Properties
+Dot notation
+console.log(student.name);
+console.log(student.age);
+console.log(student.course);
+
+Output:
+
+Anjali
+22
+B.Com
+Bracket notation
+console.log(student["name"]);
+console.log(student["age"]);
+3. Change a Property
+student.age = 23;
+
+console.log(student.age);
+
+Output:
+
+23
+4. Add a New Property
+student.city = "Delhi";
+
+console.log(student);
+
+Now the object contains:
+
+name
+age
+course
+city
+5. Delete a Property
+delete student.city;
+
+console.log(student);
+6. Object with a Function
+
+A function inside an object is called a method.
+
+let student = {
+    name: "Anjali",
+    age: 22,
+
+    greet: function() {
+        console.log("Hello!");
+    }
+};
+
+student.greet();
+
+Output:
+
+Hello!
+7. Object + Variables
+let student = {
+    name: "Anjali",
+    marks: 85
+};
+
+let name = student.name;
+let marks = student.marks;
+
+console.log(name);
+console.log(marks);
+
+Output:
+
+Anjali
+85
+📝 Day 18 Practice
+Problem 1
+
+Create an object for a student containing:
+
+name
+age
+course
+marks
+
+Print all values.
+
+Problem 2
+
+Create a car object:
+
+let car = {
+    brand: "Toyota",
+    model: "Fortuner",
+    year: 2025
+};
+
+Print the brand and model.
+
+Problem 3
+
+Change the car's year to 2026.
+
+Problem 4
+
+Add a new property:
+
+color: "Black"
+Problem 5
+
+Create an object with a method:
+
+let person = {
+    name: "Anjali",
+
+    sayHello: function() {
+        console.log("Hello, I am Anjali");
+    }
+};
+
+Call the method.
+
+🎯 Day 18 Goal
+
+By the end of Day 18, you should understand:
+
+Object → Key → Value → Access → Update → Add → Delete → Method
+
+Day 19: Object methods + Object.keys(), Object.values(), Object.entries() and looping through objects.
+
+Suggested based on your interests
+
+Scaler
+
+Scaler - AI Forward Deployed Engineer Program
+
+Become an Industry-ready FDE. Online Programme Designed for Engineers who own end-to-end deployment.
+
+Ad
+More options
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
