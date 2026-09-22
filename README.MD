@@ -3356,8 +3356,78 @@ Scaler - AI Forward Deployed Engineer Program
 
 Become an Industry-ready FDE. Online Programme Designed for Engineers who own end-to-end deployment.
 
-Ad
-More options
+# JavaScript Day 19 — Objects
+
+## 1. What is an Object?
+
+An **object** is used to store related data in **key-value pairs**.
+
+### Syntax
+
+```javascript
+let student = {
+    name: "Anjali",
+    age: 22,
+    course: "B.Com"
+};
+
+console.log(student);
+```
+
+Output:
+
+```text
+{ name: 'Anjali', age: 22, course: 'B.Com' }
+```
+
+Here:
+
+* `name` → key/property
+* `"Anjali"` → value
+* `age` → key/property
+* `22` → value
+
+---
+
+# 2. Accessing Object Properties
+
+### Method 1: Dot notation
+
+```javascript
+let student = {
+    name: "Anjali",
+    age: 22
+};
+
+console.log(student.name);
+console.log(student.age);
+```
+
+Output:
+
+```text
+Anjali
+22
+```
+
+### Method 2: Bracket notation
+
+```javascript
+console.log(student["name"]);
+console.log(student["age"]);
+```
+
+Output:
+
+```text
+Anjali
+22
+```
+
+---
+
+# 3. Adding a Ne
+
 
 
 
