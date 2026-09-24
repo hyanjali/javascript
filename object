@@ -1,0 +1,7 @@
+count student{
+    name:"Anjali",
+    class: "12",
+    age:"22";
+
+}
+consolee.log(student)

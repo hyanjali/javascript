@@ -3421,12 +3421,208 @@ Output:
 
 ```text
 Anjali
+22JavaScript Day 20 — Objects & Functions 🟨
+
+Since Day 18–19 were around functions/objects, today we’ll practice objects + functions together, which is very important for interviews and real JavaScript.
+
+1. Object Basics
+let student = {
+    name: "Anjali",
+    age: 22,
+    course: "B.Com"
+};
+
+console.log(student.name);
+console.log(student.age);
+console.log(student.course);
+
+Output:
+
+Anjali
 22
-```
+B.Com
+2. Add a Function Inside an Object
+let student = {
+    name: "Anjali",
+    age: 22,
 
----
+    greet: function() {
+        console.log("Hello " + this.name);
+    }
+};
 
-# 3. Adding a Ne
+student.greet();
+
+Output:
+
+Hello Anjali
+Important: this
+this.name
+
+Here, this refers to the current object, so:
+
+this.name
+
+means:
+
+student.name
+3. Object + Function with Parameters
+let calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+
+    subtract: function(a, b) {
+        return a - b;
+    }
+};
+
+console.log(calculator.add(10, 5));
+console.log(calculator.subtract(10, 5));
+
+Output:
+
+15
+5
+4. Function to Create Objects
+
+Instead of manually creating many objects:
+
+function createStudent(name, age) {
+    return {
+        name: name,
+        age: age
+    };
+}
+
+let student1 = createStudent("Anjali", 22);
+let student2 = createStudent("Rahul", 21);
+
+console.log(student1);
+console.log(student2);
+
+Output:
+
+{ name: "Anjali", age: 22 }
+{ name: "Rahul", age: 21 }
+5. Object with a Counting Function
+let counter = {
+    count: 0,
+
+    increase: function() {
+        this.count++;
+    }
+};
+
+counter.increase();
+counter.increase();
+counter.increase();
+
+console.log(counter.count);
+
+Output:
+
+3
+How it works
+
+Initially:
+
+count = 0
+
+After first call:
+
+1
+
+After second call:
+
+2
+
+After third call:
+
+3
+📝 Day 20 Practice Questions
+Basic
+
+Q1. Create an object containing:
+
+name
+age
+city
+
+Print all three values.
+
+Q2. Create a person object with a greet() function.
+
+Expected:
+
+Hello, I am Anjali
+
+Q3. Create a calculator object with:
+
+add()
+subtract()
+multiply()
+divide()
+
+Q4. Create a student object and write a function that prints:
+
+Anjali is studying B.Com
+
+Q5. Create an object with a count property and functions:
+
+increase()
+decrease()
+Interview-Level Practice
+
+Q6. What is an object in JavaScript?
+
+Q7. What is this inside an object method?
+
+Q8. What is the difference between:
+
+student.name
+
+and
+
+student["name"]
+
+Q9. Can a JavaScript object contain a function?
+
+Q10. What is an object method?
+
+⭐ Today's Most Important Concept
+
+Remember this pattern:
+
+let object = {
+    property: value,
+
+    method: function() {
+        // code
+    }
+};
+
+For example:
+
+let account = {
+    balance: 1000,
+
+    deposit: function(amount) {
+        this.balance += amount;
+    }
+};
+
+account.deposit(500);
+
+console.log(account.balance);
+
+Output:
+
+1500
+
+So the main Day 20 concept is:
+
+Object → Properties + Methods + this + Functions.
 
 
 
