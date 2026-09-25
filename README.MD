@@ -3623,6 +3623,116 @@ Output:
 So the main Day 20 concept is:
 
 Object → Properties + Methods + this + Functions.
+JavaScript Day 21 🚀
+
+Since Day 18–20 covered objects and functions, today let's move to an important topic:
+
+Day 21 — Objects + Functions Together
+1. Object with a function
+let student = {
+    name: "Anjali",
+    age: 22,
+
+    greet: function() {
+        console.log("Hello, I am " + this.name);
+    }
+};
+
+student.greet();
+
+Output:
+
+Hello, I am Anjali
+2. What is this?
+
+this refers to the current object.
+
+let student = {
+    name: "Anjali",
+
+    greet: function() {
+        console.log(this.name);
+    }
+};
+
+student.greet();
+
+Here:
+
+this.name
+
+means:
+
+student.name
+3. Function to calculate salary
+let employee = {
+    name: "Anjali",
+    salary: 30000,
+
+    yearlySalary: function() {
+        return this.salary * 12;
+    }
+};
+
+console.log(employee.yearlySalary());
+
+Output:
+
+360000
+4. Object with multiple functions
+let calculator = {
+    a: 10,
+    b: 5,
+
+    add: function() {
+        return this.a + this.b;
+    },
+
+    subtract: function() {
+        return this.a - this.b;
+    },
+
+    multiply: function() {
+        return this.a * this.b;
+    }
+};
+
+console.log(calculator.add());
+console.log(calculator.subtract());
+console.log(calculator.multiply());
+
+Output:
+
+15
+5
+50
+Day 21 Practice Questions
+Q1. Create an object person with:
+name
+age
+city
+a function that prints all details.
+Q2. Create a student object with:
+name
+marks
+a function that calculates marks + 10.
+Q3. Create a car object with:
+brand
+model
+price
+a function that prints "Car is available".
+Q4. Create a calculator object with:
+a = 20
+b = 10
+add
+subtract
+multiply
+divide
+Q5. Create an employee object and a function that increases the salary by 5000.
+
+Day 21 main concepts:
+object → method → this → function inside object → accessing object properties
+
 
 
 
