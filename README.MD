@@ -3732,6 +3732,211 @@ Q5. Create an employee object and a function that increases the salary by 5000.
 
 Day 21 main concepts:
 object → method → this → function inside object → accessing object properties
+JavaScript Day 22 🚀
+
+Today we’ll continue from Objects + Functions and learn an important concept:
+
+Day 22 — Constructor Functions & new
+
+A constructor function is used to create multiple objects with the same structure.
+
+1. Normal Object
+let student1 = {
+    name: "Anjali",
+    age: 22,
+    course: "B.Com"
+};
+
+console.log(student1);
+
+If we want 10 students, creating every object separately becomes repetitive.
+
+So we use a constructor function.
+
+2. Constructor Function
+function Student(name, age, course) {
+    this.name = name;
+    this.age = age;
+    this.course = course;
+}
+
+Here:
+
+Student → constructor function
+name, age, course → parameters
+this.name → property of the new object
+this.age → property of the new object
+3. Using new
+let student1 = new Student("Anjali", 22, "B.Com");
+let student2 = new Student("Rahul", 21, "B.Tech");
+
+console.log(student1);
+console.log(student2);
+Output:
+Student {
+    name: "Anjali",
+    age: 22,
+    course: "B.Com"
+}
+
+Student {
+    name: "Rahul",
+    age: 21,
+    course: "B.Tech"
+}
+Important:
+new Student(...)
+
+creates a new object using the Student constructor.
+
+4. Accessing Properties
+console.log(student1.name);
+console.log(student1.age);
+console.log(student1.course);
+
+Output:
+
+Anjali
+22
+B.Com
+5. Constructor with a Method
+
+We can also put a function inside the constructor.
+
+function Student(name, age) {
+    this.name = name;
+    this.age = age;
+
+    this.introduce = function() {
+        console.log("My name is " + this.name);
+    };
+}
+
+let student1 = new Student("Anjali", 22);
+
+student1.introduce();
+
+Output:
+
+My name is Anjali
+6. Another Example — Employee
+function Employee(name, salary) {
+    this.name = name;
+    this.salary = salary;
+
+    this.showSalary = function() {
+        console.log(this.salary);
+    };
+}
+
+let employee1 = new Employee("Anjali", 30000);
+let employee2 = new Employee("Riya", 40000);
+
+employee1.showSalary();
+employee2.showSalary();
+
+Output:
+
+30000
+40000
+7. Constructor Function vs Normal Function
+Normal function:
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Anjali");
+Constructor function:
+function Student(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+let student1 = new Student("Anjali", 22);
+
+The important difference is the use of:
+
+new
+⭐ Day 22 Practice Questions
+Q1
+
+Create a Car constructor with:
+
+brand
+model
+price
+
+Create two cars.
+
+Q2
+
+Create a Student constructor with:
+
+name
+age
+marks
+
+Create three students and print their names.
+
+Q3
+
+Create an Employee constructor with:
+
+name
+salary
+
+Add a method:
+
+showSalary()
+Q4
+
+Create a Product constructor with:
+
+name
+price
+quantity
+
+Add a method that calculates:
+
+price × quantity
+Q5 ⭐
+
+Create a BankAccount constructor:
+
+function BankAccount(name, balance) {
+    this.name = name;
+    this.balance = balance;
+}
+
+Add a method:
+
+deposit(amount)
+
+which increases the balance.
+
+📌 Day 22 Notes
+
+Remember these 5 things:
+
+1. Constructor function → creates objects
+2. this → refers to the new object
+3. new → creates a new object
+4. Parameters → give different values
+5. Methods → functions inside the object
+
+Day 22 flow:
+
+Constructor Function
+        ↓
+       this
+        ↓
+       new
+        ↓
+   New Object
+        ↓
+    Properties
+        ↓
+      Methods
 
 
 
