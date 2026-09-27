@@ -3937,7 +3937,210 @@ Constructor Function
     Properties
         ↓
       Methods
-     
+     JavaScript Day 23 — Object Methods & this
+1. What is an Object Method?
+
+When a function is stored inside an object, it is called a method.
+
+let student = {
+    name: "Anjali",
+    age: 22,
+
+    greet: function() {
+        console.log("Hello!");
+    }
+};
+
+student.greet();
+Output:
+Hello!
+2. Using this
+
+this refers to the current object.
+
+let student = {
+    name: "Anjali",
+    age: 22,
+
+    introduce: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+student.introduce();
+Output:
+My name is Anjali
+Remember:
+this.name
+
+means:
+
+Get the name property from the current object.
+
+3. Object with Multiple Methods
+let calculator = {
+    a: 10,
+    b: 5,
+
+    add: function() {
+        console.log(this.a + this.b);
+    },
+
+    subtract: function() {
+        console.log(this.a - this.b);
+    },
+
+    multiply: function() {
+        console.log(this.a * this.b);
+    }
+};
+
+calculator.add();
+calculator.subtract();
+calculator.multiply();
+Output:
+15
+5
+50
+4. Method with Parameters
+let student = {
+    name: "Anjali",
+
+    greet: function(name) {
+        console.log("Hello " + name);
+    }
+};
+
+student.greet("Rahul");
+Output:
+Hello Rahul
+5. Updating Object Properties Using a Method
+let student = {
+    name: "Anjali",
+    marks: 70,
+
+    addMarks: function() {
+        this.marks = this.marks + 10;
+    }
+};
+
+student.addMarks();
+
+console.log(student.marks);
+Output:
+80
+
+Here:
+
+this.marks = this.marks + 10;
+
+means:
+
+old marks + 10
+70 + 10
+= 80
+6. Method Using this Multiple Times
+let person = {
+    firstName: "Anjali",
+    lastName: "Negi",
+
+    fullName: function() {
+        console.log(this.firstName + " " + this.lastName);
+    }
+};
+
+person.fullName();
+Output:
+Anjali Negi
+7. Important Difference
+Normal property:
+let student = {
+    name: "Anjali",
+    age: 22
+};
+Method:
+let student = {
+    name: "Anjali",
+
+    greet: function() {
+        console.log("Hello");
+    }
+};
+
+So:
+
+Property → stores data
+
+Method → performs an action
+
+🧠 Day 23 Practice Questions
+Q1. Create an object containing:
+name
+age
+city
+
+Print all three.
+
+Q2. Create a car object with:
+brand
+model
+price
+
+Create a method that prints:
+
+My car is BMW
+Q3. Create a calculator object with methods:
+add
+subtract
+multiply
+divide
+Q4. Create a student object:
+name: "Anjali"
+marks: 80
+
+Create a method that adds 5 marks.
+
+Expected:
+
+85
+Q5. Create a person object:
+firstName: "Anjali"
+lastName: "Negi"
+
+Create a fullName() method using this.
+
+Expected:
+
+Anjali Negi
+Q6. Create a bank account:
+let account = {
+    balance: 1000
+};
+
+Create methods:
+
+deposit()
+withdraw()
+checkBalance()
+⭐ What you should remember from Day 23
+Object
+   ↓
+Properties → data
+Methods    → functions
+   ↓
+this       → current object
+
+Most important syntax:
+
+let object = {
+    property: value,
+
+    method: function() {
+        console.log(this.property);
+    }
+};
+
+Day 23 = Object Methods + this keyword.
 
 
 
