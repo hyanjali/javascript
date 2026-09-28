@@ -4141,6 +4141,204 @@ let object = {
 };
 
 Day 23 = Object Methods + this keyword.
+# 🚀 JavaScript Day 24 — Callback Functions & Higher-Order Functions
+
+## 1. What is a Callback Function?
+
+A **callback function** is a function that is passed as an argument to another function.
+
+### Example:
+
+```javascript
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function message() {
+    console.log("Welcome to JavaScript!");
+}
+
+greet("Anjali", message);
+```
+
+### Output:
+
+```text
+Hello Anjali
+Welcome to JavaScript!
+```
+
+Here:
+
+```javascript
+greet("Anjali", message);
+```
+
+`message` is passed to `greet()`.
+
+So `message` becomes the **callback function**.
+
+---
+
+# 2. Function as an Argument
+
+Normally:
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(10, 20));
+```
+
+But a function can also be passed as an argument:
+
+```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+function add(x, y) {
+    return x + y;
+}
+
+console.log(calculate(10, 20, add));
+```
+
+### Output:
+
+```text
+30
+```
+
+### Important:
+
+```javascript
+calculate(10, 20, add)
+```
+
+means:
+
+* `10` → a
+* `20` → b
+* `add` → operation
+
+---
+
+# 3. Callback Using Anonymous Function
+
+We don't always need to create a separate function.
+
+```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+console.log(calculate(10, 5, function(x, y) {
+    return x * y;
+}));
+```
+
+### Output:
+
+```text
+50
+```
+
+---
+
+# 4. Callback Using Arrow Function
+
+The same example can be written more shortly:
+
+```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+console.log(calculate(10, 5, (x, y) => x * y));
+```
+
+### Output:
+
+```text
+50
+```
+
+---
+
+# 5. Higher-Order Function
+
+A function is called a **Higher-Order Function** when it:
+
+1. Takes another function as an argument, OR
+2. Returns another function.
+
+Example:
+
+```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+```
+
+`calculate()` is a higher-order function because it accepts `operation` as a function.
+
+---
+
+# 6. Returning a Function
+
+A function can also return another function.
+
+```javascript
+function outer() {
+
+    function inner() {
+        console.log("Hello!");
+    }
+
+    return inner;
+}
+
+let result = outer();
+
+result();
+```
+
+### Output:
+
+```text
+Hello!
+```
+
+---
+
+# 7. Callback with setTimeout()
+
+Callbacks are very common in JavaScript.
+
+```javascript
+setTimeout(function() {
+    console.log("Hello JavaScript");
+}, 2000);
+```
+
+The function runs after approximately **2 seconds**.
+
+Using arrow function:
+
+```javascript
+setTimeout(() => {
+    console.log("Hello JavaScript");
+}, 2000);
+```
+
+---
+
+# 8. forEach() and
+
 
 
 
