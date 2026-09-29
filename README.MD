@@ -4338,6 +4338,180 @@ setTimeout(() => {
 ---
 
 # 8. forEach() and
+JavaScript Day 24 — DOM Basics
+
+Today we’ll start DOM (Document Object Model), which is very important for making websites interactive.
+
+1. What is DOM?
+
+DOM = Document Object Model
+
+JavaScript uses the DOM to access and change HTML elements.
+
+Example HTML:
+
+<h1 id="title">Hello</h1>
+
+JavaScript can access it:
+
+let heading = document.getElementById("title");
+
+console.log(heading);
+2. getElementById()
+
+Used to select an HTML element using its id.
+
+HTML
+<h1 id="title">Hello World</h1>
+JavaScript
+let heading = document.getElementById("title");
+
+console.log(heading);
+3. Changing HTML Content
+
+We can use .textContent.
+
+let heading = document.getElementById("title");
+
+heading.textContent = "Welcome to JavaScript";
+
+Before:
+
+Hello World
+
+After:
+
+Welcome to JavaScript
+4. querySelector()
+
+Another important method for selecting elements.
+
+let heading = document.querySelector("#title");
+
+Here:
+
+#title → id
+
+For a class:
+
+let box = document.querySelector(".box");
+
+For a tag:
+
+let heading = document.querySelector("h1");
+5. Changing CSS with JavaScript
+
+HTML:
+
+<h1 id="title">Hello</h1>
+
+JavaScript:
+
+let heading = document.getElementById("title");
+
+heading.style.color = "red";
+heading.style.fontSize = "40px";
+
+JavaScript changes the CSS of the selected element.
+
+6. innerHTML
+
+innerHTML can change the HTML inside an element.
+
+let box = document.getElementById("box");
+
+box.innerHTML = "<h2>Hello JavaScript</h2>";
+7. Events
+
+An event is something that happens on a webpage.
+
+Examples:
+
+click
+mouseover
+keypress
+submit
+change
+
+We can respond to an event using JavaScript.
+
+Example
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    console.log("Button clicked");
+});
+
+When the button is clicked:
+
+Button clicked
+🧠 Day 24 Important Syntax
+document.getElementById("id");
+document.querySelector("selector");
+element.textContent = "New Text";
+element.innerHTML = "New HTML";
+element.style.color = "red";
+element.addEventListener("click", function() {
+    // code
+});
+✍️ Day 24 Practice Questions
+Q1. Change heading text
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+Change it to:
+
+Hello JavaScript
+Q2. Change color
+
+Change the heading color to blue.
+
+Q3. Button click
+
+Create a button and print:
+
+Button clicked
+
+when the user clicks it.
+
+Q4. Change paragraph
+
+HTML:
+
+<p id="para">Old Text</p>
+
+Change it to:
+
+JavaScript is easy!
+Q5. Change font size
+
+Change the heading font size to 30px.
+
+⭐ Day 24 Main Goal
+
+Remember this flow:
+
+HTML element
+      ↓
+Select element
+      ↓
+Change element
+      ↓
+Add event
+
+Example:
+
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    button.textContent = "Clicked!";
+});
+
+This is the beginning of building interactive JavaScript websites.
+
+For the day 24 write goal, here’s one live app hosting option.
 
 
 
