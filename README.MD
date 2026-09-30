@@ -4512,6 +4512,207 @@ button.addEventListener("click", function() {
 This is the beginning of building interactive JavaScript websites.
 
 For the day 24 write goal, here’s one live app hosting option.
+JavaScript Day 25 — DOM Basics
+
+Today we start one of the most important JavaScript topics: DOM (Document Object Model).
+
+1. What is DOM?
+
+DOM = Document Object Model
+
+JavaScript uses the DOM to access and change HTML elements.
+
+Example HTML:
+
+<h1 id="title">Hello</h1>
+
+JavaScript can change it:
+
+document.getElementById("title").innerText = "Hello Anjali";
+
+Output on webpage:
+
+Hello Anjali
+2. document
+
+document represents the HTML webpage.
+
+document
+
+We use it to find and modify HTML elements.
+
+3. getElementById()
+
+Used to select an HTML element using its id.
+
+HTML
+<h1 id="heading">Hello</h1>
+JavaScript
+let heading = document.getElementById("heading");
+
+console.log(heading);
+
+It selects:
+
+<h1 id="heading">Hello</h1>
+4. innerText
+
+Used to change the text of an element.
+
+<h1 id="heading">Hello</h1>
+let heading = document.getElementById("heading");
+
+heading.innerText = "Welcome to JavaScript";
+
+Now webpage shows:
+
+Welcome to JavaScript
+Remember:
+element.innerText = "new text";
+5. Changing HTML
+
+We can use innerHTML.
+
+<div id="box"></div>
+let box = document.getElementById("box");
+
+box.innerHTML = "<h2>Hello</h2>";
+
+Now the <div> contains:
+
+<h2>Hello</h2>
+Difference
+innerText
+
+→ changes text
+
+innerHTML
+
+→ can add/change HTML
+
+6. querySelector()
+
+Another important way to select an element.
+
+HTML
+<h1 id="title">Hello</h1>
+JavaScript
+let title = document.querySelector("#title");
+
+console.log(title);
+
+# means id.
+
+For a class:
+
+let box = document.querySelector(".box");
+
+. means class.
+
+7. Changing CSS
+
+We can also change CSS using JavaScript.
+
+HTML
+<h1 id="title">Hello</h1>
+JavaScript
+let title = document.getElementById("title");
+
+title.style.color = "red";
+
+Now the heading becomes red.
+
+Another example:
+
+title.style.fontSize = "40px";
+8. Complete Example
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 25</title>
+</head>
+
+<body>
+
+<h1 id="title">Hello JavaScript</h1>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+JavaScript
+let title = document.getElementById("title");
+
+title.innerText = "JavaScript Day 25";
+
+title.style.color = "blue";
+Result:
+
+The webpage displays:
+
+JavaScript Day 25
+
+and the text becomes blue.
+
+🧠 Day 25 Important Syntax
+
+Write these in your notebook:
+
+document.getElementById("id")
+document.querySelector("selector")
+element.innerText = "text";
+element.innerHTML = "HTML";
+element.style.color = "red";
+element.style.fontSize = "30px";
+✍️ Day 25 Practice Questions
+Q1. Change heading text
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+Make the output:
+
+Welcome to JavaScript
+Q2. Change paragraph
+<p id="message">Old Message</p>
+
+Change it to:
+
+Learning DOM
+Q3. Change color
+<h1 id="title">JavaScript</h1>
+
+Make the text red.
+
+Q4. Change font size
+
+Make this heading 40px:
+
+<h1 id="title">Hello</h1>
+Q5. Change both text and color
+<h1 id="title">Hello</h1>
+
+Output should be:
+
+I am learning JavaScript
+
+and the text should be blue.
+
+⭐ Day 25 One-Line Revision
+
+DOM → JavaScript se HTML elements ko select, change aur control karna.
+
+HTML element
+     ↓
+Select
+     ↓
+Change
+     ↓
+Output on webpage
+
+Tomorrow, Day 26 can continue with DOM events — onclick, buttons, input fields, and user interaction, which is where DOM starts becoming really practical.
 
 
 
