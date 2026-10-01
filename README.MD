@@ -4713,6 +4713,148 @@ Change
 Output on webpage
 
 Tomorrow, Day 26 can continue with DOM events — onclick, buttons, input fields, and user interaction, which is where DOM starts becoming really practical.
+# JavaScript Day 26 — DOM Events
+
+## 1. What is an Event?
+
+An **event** is an action that happens on a webpage.
+
+Examples:
+
+* Button click
+* Mouse movement
+* Keyboard press
+* Form submission
+* Input/change
+
+```text
+User Action
+     ↓
+   Event
+     ↓
+JavaScript responds
+     ↓
+Output changes
+```
+
+---
+
+# 2. Common DOM Events
+
+| Event       | Meaning                  |
+| ----------- | ------------------------ |
+| `click`     | User clicks an element   |
+| `dblclick`  | Double click             |
+| `mouseover` | Mouse comes over element |
+| `mouseout`  | Mouse leaves element     |
+| `keydown`   | Keyboard key is pressed  |
+| `keyup`     | Keyboard key is released |
+| `input`     | User enters something    |
+| `change`    | Value is changed         |
+| `submit`    | Form is submitted        |
+
+---
+
+# 3. `onclick`
+
+The simplest way to handle a click.
+
+### HTML
+
+```html
+<button onclick="sayHello()">Click Me</button>
+```
+
+### JavaScript
+
+```javascript
+function sayHello() {
+    console.log("Hello!");
+}
+```
+
+When we click the button:
+
+```text
+Click button
+     ↓
+sayHello()
+     ↓
+"Hello!"
+```
+
+---
+
+# 4. `addEventListener()`
+
+A better and commonly used way to handle events.
+
+### HTML
+
+```html
+<button id="btn">Click Me</button>
+```
+
+### JavaScript
+
+```javascript
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+```
+
+### Understand this:
+
+```javascript
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+```
+
+* `button` → selected HTML element
+* `addEventListener()` → listens for an event
+* `"click"` → event we are waiting for
+* `function()` → code that runs after the event
+
+---
+
+# 5. Change Text on Click
+
+### HTML
+
+```html
+<h1 id="heading">Hello</h1>
+<button id="btn">Change Text</button>
+```
+
+### JavaScript
+
+```javascript
+let heading = document.getElementById("heading");
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    heading.textContent = "Welcome!";
+});
+```
+
+### Flow
+
+```text
+Button clicked
+      ↓
+Event detected
+      ↓
+heading.textContent
+      ↓
+"
+```
+
+
+
+
 
 
 
