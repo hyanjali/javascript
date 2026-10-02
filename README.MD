@@ -4850,7 +4850,422 @@ Event detected
 heading.textContent
       ↓
 "
+```# JavaScript Day 26 — DOM Events
+
+## 1. What is an Event?
+
+An **event** is an action that happens on a webpage.
+
+Examples:
+
+* Button click
+* Mouse movement
+* Keyboard key press
+* Form submit
+* Input change
+
+```text
+User Action
+     ↓
+   Event
+     ↓
+JavaScript
+     ↓
+Change on Webpage
 ```
+
+---
+
+## 2. Common JavaScript Events
+
+| Event       | Meaning                     |
+| ----------- | --------------------------- |
+| `click`     | User clicks an element      |
+| `dblclick`  | User double-clicks          |
+| `mouseover` | Mouse comes over an element |
+| `mouseout`  | Mouse leaves an element     |
+| `keydown`   | Keyboard key is pressed     |
+| `keyup`     | Keyboard key is released    |
+| `input`     | User types in an input      |
+| `submit`    | Form is submitted           |
+
+---
+
+# 3. `onclick`
+
+`onclick` runs JavaScript when an element is clicked.
+
+### HTML
+
+```html
+<button id="btn">Click Me</button>
+```
+
+### JavaScript
+
+```javascript
+let button = document.getElementById("btn");
+
+button.onclick = function() {
+    console.log("Button clicked");
+};
+```
+
+### Output
+
+When you click the button:
+
+```text
+Button clicked
+```
+
+---
+
+# 4. Changing Text on Click
+
+### HTML
+
+```html
+<h2 id="heading">Hello</h2>
+
+<button id="btn">Click Me</button>
+```
+
+### JavaScript
+
+```javascript
+let heading = document.getElementById("heading");
+let button = document.getElementById("btn");
+
+button.onclick = function() {
+    heading.textContent = "Welcome to JavaScript";
+};
+```
+
+### What happens?
+
+Before click:
+
+```text
+Hello
+[Click Me]
+```
+
+After click:
+
+```text
+Welcome to JavaScript
+[Click Me]
+```
+
+---
+
+# 5. `addEventListener()`
+
+A more commonly used way to handle events is:
+
+```javascript
+element.addEventListener("event", function() {
+    // code
+});
+```
+
+Example:
+
+```javascript
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    console.log("Button clicked");
+});
+```
+
+### Remember
+
+```text
+addEventListener
+       ↓
+    Event
+       ↓
+  Function runs
+```
+
+---
+
+# 6. Example — Change Color
+
+### HTML
+
+```html
+<p id="text">Hello JavaScript</p>
+
+<button id="btn">Change Color</button>
+```
+
+### JavaScript
+
+```javascript
+let text = document.getElementById("text");
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    text.style.color = "red";
+});
+```
+
+When the button is clicked, the text becomes red.
+
+---
+
+# 7. Input Event
+
+The `input` event runs whenever the user types something.
+
+### HTML
+
+```html
+<input id="name" type="text">
+
+<p id="output"></p>
+```
+
+### JavaScript
+
+```javascript
+let nameInput = document.getElementById("name");
+let output = document.getElementById("output");
+
+nameInput.addEventListener("input", function() {
+    output.textContent = nameInput.value;
+});
+```
+
+If the user types:
+
+```text
+Anjali
+```
+
+The webpage displays:
+
+```text
+Anjali
+```
+
+---
+
+# 8. `value`
+
+For input elements, we use:
+
+```javascript
+input.value
+```
+
+to get what the user has typed.
+
+Example:
+
+```javascript
+let name = document.getElementById("name");
+
+console.log(name.value);
+```
+
+If the user types:
+
+```text
+Anjali
+```
+
+Output:
+
+```text
+Anjali
+```
+
+---
+
+# 9. Event Function
+
+We can also write the event function separately.
+
+```javascript
+function showMessage() {
+    console.log("Hello!");
+}
+
+let button = document.getElementById("btn");
+
+button.addEventListener("click", showMessage);
+```
+
+Notice:
+
+```javascript
+showMessage
+```
+
+not:
+
+```javascript
+showMessage()
+```
+
+Because we are giving the function to the event listener to run later.
+
+---
+
+# 10. Important Syntax
+
+### `onclick`
+
+```javascript
+button.onclick = function() {
+    // code
+};
+```
+
+### `addEventListener`
+
+```javascript
+button.addEventListener("click", function() {
+    // code
+});
+```
+
+For beginners, remember this pattern:
+
+```javascript
+element.addEventListener("event", function() {
+    
+});
+```
+
+---
+
+# 11. Mini Project — Click Counter
+
+### HTML
+
+```html
+<h2 id="count">0</h2>
+
+<button id="btn">Click</button>
+```
+
+### JavaScript
+
+```javascript
+let count = 0;
+
+let heading = document.getElementById("count");
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    count++;
+    heading.textContent = count;
+});
+```
+
+### Working
+
+First:
+
+```text
+0
+[Click]
+```
+
+After 1 click:
+
+```text
+1
+```
+
+After 2 clicks:
+
+```text
+2
+```
+
+After 3 clicks:
+
+```text
+3
+```
+
+---
+
+# 12. Day 26 Important Points
+
+```text
+Event = User action
+
+click       → clicking
+dblclick    → double clicking
+mouseover   → mouse enters
+mouseout    → mouse leaves
+keydown     → key pressed
+keyup       → key released
+input       → user types
+submit      → form submitted
+```
+
+### Most important syntax:
+
+```javascript
+element.addEventListener("click", function() {
+    // code
+});
+```
+
+### Important properties:
+
+```javascript
+element.textContent
+element.value
+element.style.color
+```
+
+---
+
+# Day 26 Practice Questions
+
+### Q1. Button click par `"Hello JavaScript"` console mein print karo.
+
+### Q2. Button click par heading ka text `"Welcome"` karo.
+
+### Q3. Button click par paragraph ka color change karo.
+
+### Q4. Input mein jo user type kare, woh paragraph mein show karo.
+
+### Q5. Click Counter banao.
+
+### Q6. Button click par background color change karo.
+
+### Q7. Mouseover par text change karo.
+
+### Q8. Input ki value console mein print karo.
+
+### Q9. Do buttons banao:
+
+* Increase
+* Decrease
+
+Aur counter ko update karo.
+
+### Q10. Ek button banao jo click hone par:
+
+```text
+Hello Anjali!
+```
+
+webpage par display kare.
+
+
+
+
 
 
 
