@@ -5262,6 +5262,151 @@ Hello Anjali!
 ```
 
 webpage par display kare.
+JavaScript — Day 27 🚀
+
+Day 27 topic: DOM Events & Event Listeners
+
+Yesterday you learned the basic DOM flow:
+
+HTML element → Select → Change → Output
+
+Today we'll learn how to make the webpage respond to the user.
+
+1. What is an Event?
+
+An event is an action performed by the user.
+
+Examples:
+
+click
+mouseover
+keydown
+keyup
+submit
+change
+
+For example, when you click a button:
+
+<button id="btn">Click Me</button>
+
+JavaScript can detect that click.
+
+2. addEventListener()
+
+Syntax:
+
+element.addEventListener("event", function);
+
+Example:
+
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+    console.log("Button clicked!");
+});
+How it works:
+document
+   ↓
+getElementById()
+   ↓
+button selected
+   ↓
+addEventListener()
+   ↓
+wait for click
+   ↓
+function runs
+3. Change webpage when button is clicked
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+<button id="btn">Change</button>
+
+JavaScript:
+
+let heading = document.getElementById("heading");
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+    heading.textContent = "Welcome to JavaScript!";
+});
+
+Before clicking:
+
+Hello
+
+After clicking:
+
+Welcome to JavaScript!
+4. Change CSS using an event
+<h1 id="heading">Hello</h1>
+<button id="btn">Change</button>
+let heading = document.getElementById("heading");
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+    heading.style.fontSize = "50px";
+});
+5. Input + Button Event
+
+HTML:
+
+<input id="name" type="text">
+<button id="btn">Submit</button>
+
+<h2 id="output"></h2>
+
+JavaScript:
+
+let input = document.getElementById("name");
+let btn = document.getElementById("btn");
+let output = document.getElementById("output");
+
+btn.addEventListener("click", function () {
+    output.textContent = input.value;
+});
+
+If you type:
+
+Anjali
+
+and click Submit, output will be:
+
+Anjali
+⭐ Important things to remember
+document.getElementById()
+
+→ selects an element
+
+addEventListener()
+
+→ waits for an event
+
+"click"
+
+→ event type
+
+function () { }
+
+→ code that runs when the event happens
+
+input.value
+
+→ gets the user's input
+
+textContent
+
+→ changes the text on the webpage
+
+📝 Day 27 Practice
+Create a button that changes "Hello" to "Good Morning".
+Create a button that changes the heading's font size.
+Take the user's name from an input and display "Hello, Anjali".
+Create a button that changes a paragraph's text.
+Create two buttons: ON and OFF, and change the paragraph accordingly.
+
 
 
 
