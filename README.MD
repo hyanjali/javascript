@@ -5406,6 +5406,128 @@ Create a button that changes the heading's font size.
 Take the user's name from an input and display "Hello, Anjali".
 Create a button that changes a paragraph's text.
 Create two buttons: ON and OFF, and change the paragraph accordingly.
+JavaScript Day 28 — DOM: Selecting & Changing HTML Elements
+
+Today we’ll continue DOM and learn how JavaScript can select an HTML element and change it.
+
+1. What is DOM?
+
+DOM = Document Object Model
+
+JavaScript uses DOM to access and change HTML elements.
+
+Basic flow:
+
+HTML Element
+     ↓
+   Select
+     ↓
+   Change
+     ↓
+Output on webpage
+2. getElementById()
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+JavaScript:
+
+let heading = document.getElementById("heading");
+
+console.log(heading);
+
+Here:
+
+document → webpage
+getElementById() → element ko ID se select karta hai
+"heading" → HTML ki ID
+3. Change text using textContent
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+JavaScript:
+
+let heading = document.getElementById("heading");
+
+heading.textContent = "Hello JavaScript";
+Output:
+Hello JavaScript
+
+So:
+
+heading.textContent = "Hello JavaScript";
+
+means:
+
+Heading ke andar ka text change karo.
+
+4. Change paragraph
+
+HTML:
+
+<p id="message">Old Message</p>
+
+JavaScript:
+
+let message = document.getElementById("message");
+
+message.textContent = "New Message";
+
+Output:
+
+New Message
+5. Change CSS using JavaScript
+
+HTML:
+
+<h1 id="heading">Hello</h1>
+
+JavaScript:
+
+let heading = document.getElementById("heading");
+
+heading.style.color = "red";
+
+Now heading red ho jayegi.
+
+Another example:
+
+heading.style.fontSize = "40px";
+⭐ Important Syntax
+Select:
+let element = document.getElementById("id");
+Change text:
+element.textContent = "New Text";
+Change style:
+element.style.color = "red";
+📝 Day 28 Practice Questions
+Q1. HTML heading ka text "Welcome" se "Hello JavaScript" karo.
+Q2. Paragraph ka text change karo.
+Q3. Heading ka color red karo.
+Q4. Button click hone par heading ka text "Button Clicked" karo.
+Q5. Button click hone par paragraph ka color blue karo.
+🎯 Day 28 Main Concept
+document
+   ↓
+getElementById()
+   ↓
+Select HTML element
+   ↓
+textContent / style
+   ↓
+Change webpage
+🔥 Exam/Interview ke liye yaad rakho:
+
+getElementById() = ID se HTML element select karna
+
+textContent = text change karna
+
+style = CSS change karna
+
+Day 28 ka main focus: JavaScript se HTML ko select karke change karna.
 
 
 
